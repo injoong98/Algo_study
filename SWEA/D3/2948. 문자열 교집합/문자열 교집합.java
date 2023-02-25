@@ -30,7 +30,7 @@ public class Solution {
             for(int m=0; m<M; m++) {
                 set.add(st.nextToken());
             }
-            
+
             res = N+M-set.size();
 
             System.out.printf("#%d %d\n",tc,res);
