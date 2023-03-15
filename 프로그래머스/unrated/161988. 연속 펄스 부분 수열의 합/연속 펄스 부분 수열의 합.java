@@ -2,21 +2,17 @@ import java.util.*;
 
 class Solution {
     public long solution(int[] sequence) {
-        long answer = 0;
-        
         for(int i=0; i<sequence.length; i++) {
             sequence[i] *= 1 - ( 2 * (i%2) );
         }
-        
-        answer = Math.max(answer, calcMax(sequence));
+        long res1 = calcMax(sequence);
         
         for(int i=0; i<sequence.length; i++) {
             sequence[i] *= -1;
         }
+        long res2 = calcMax(sequence);
         
-        answer = Math.max(answer, calcMax(sequence));
-        
-        return answer;
+        return Math.max(res1, res2);
     }
     
     private long calcMax(int[] sequence) {
